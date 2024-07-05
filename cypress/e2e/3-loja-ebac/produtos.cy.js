@@ -1,11 +1,10 @@
 /// <reference types="cypress"/>
 
-import { should } from "chai";
 
 describe('Funcionalidade: produtos', () => {
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/produtos/' )  
-    });
+        cy.visit('produtos') 
+        });
 
     it('deve selecionar um produto na lista',()=>{
        cy.get('.products > .row')
@@ -15,7 +14,7 @@ describe('Funcionalidade: produtos', () => {
         .contains('Apollo Running Short')
         .click()
 
-        cy.get('#tab-title-description > a') .should('contain', 'Descrição')
+        cy.get('#tab-title-description > a').should('contain', 'Descrição')
     });
    
     
